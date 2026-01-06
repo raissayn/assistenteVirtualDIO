@@ -72,10 +72,11 @@ Abaixo estão os conteúdos que constam na memória do agente.
     }
   ]
 }
-
+```
 
 ### 📄 `produtos_financeiros.json`
 > **Descrição:** Contém o catálogo de produtos que o agente está autorizado a ofertar.
+```json
 [
   {
     "nome": "Tesouro Selic 2029",
@@ -129,7 +130,7 @@ Abaixo estão os conteúdos que constam na memória do agente.
     "indicado_para": "Perfil arrojado com foco no longo prazo (+5 anos)"
   }
 ]
-
+```
 ### 📄 `transacoes.csv`
 > **Descrição:** O agente lê este arquivo para calcular o fluxo de caixa (Entradas - Saídas) e sugerir o valor do aporte mensal.
 
