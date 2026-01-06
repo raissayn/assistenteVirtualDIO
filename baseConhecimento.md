@@ -149,6 +149,8 @@ data,descricao,categoria,valor,tipo
 
 ### 📄 `historico_atendimento.csv`
 > **Descrição:** Log de interações passadas entre a cliente e o suporte. Uso: Contextualização (Few-Shot Learning). O agente sabe o que a cliente já aprendeu para não ser repetitivo.
+
+
 data,canal,tema,resumo,resolvido
 2025-09-15,chat,CDB,Cliente perguntou sobre rentabilidade e prazos,sim
 2025-09-22,telefone,Problema no app,Erro ao visualizar extrato foi corrigido,sim
