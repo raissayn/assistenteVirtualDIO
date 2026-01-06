@@ -55,3 +55,6 @@ flowchart TD
     D -->|Retorna Contexto Relevante| C
     C -->|Gera Resposta Baseada no Contexto| E[Guardrails de Segurança]
     E -->|Verifica Alucinações/Viés| F[Resposta Final ao Cliente]
+```
+### Ética e Privacidade
+O agente opera sob princípios éticos rigorosos: **ele não possui acesso a dados bancários sensíveis ou reais do usuário** e suas orientações têm caráter estritamente educativo e informativo, **não substituindo, em hipótese alguma, a consultoria técnica de um profissional financeiro certificado**.
