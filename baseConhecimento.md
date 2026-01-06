@@ -37,6 +37,124 @@ Os dados não são "treinados" no modelo, mas sim **injetados dinamicamente** no
 2.  **Busca:** O sistema recupera a linha do CSV correspondente ao "Fundo XPTO".
 3.  **Prompt Engineering:** O dado cru é inserido em um bloco de contexto com instruções de "Grounding" (ancoragem), obrigando o Edu a usar apenas aquele dado para responder.
 
+
+
+## 1. Arquivos de Dados (Full Content)
+
+Para simplificar, podemos simplesmente "injetar" os dados em nosso prompt, garantindo que o Agente tenha o melhor contexto possível. 
+Abaixo estão os conteúdos que constam na memória do agente.
+
+### 📄 `perfil_investidor.json`
+> **Descrição:** Contém os dados cadastrais, financeiros e psicológicos (perfil de risco) da cliente atual.
+> **Uso:** Personalização do tom de voz e filtro de segurança (Suitability).
+
+```json
+{
+  "nome": "Raissa Nunes",
+  "idade": 20,
+  "profissao": "Analista de Sistemas",
+  "renda_mensal": 5000.00,
+  "perfil_investidor": "moderado",
+  "objetivo_principal": "Construir reserva de emergência",
+  "patrimonio_total": 15000.00,
+  "reserva_emergencia_atual": 10000.00,
+  "aceita_risco": false,
+  "metas": [
+    {
+      "meta": "Completar reserva de emergência",
+      "valor_necessario": 15000.00,
+      "prazo": "2026-06"
+    },
+    {
+      "meta": "Entrada do apartamento",
+      "valor_necessario": 50000.00,
+      "prazo": "2027-12"
+    }
+  ]
+}
+
+
+### 📄 `produtos_financeiros.json`
+> **Descrição:** Contém o catálogo de produtos que o agente está autorizado a ofertar.
+[
+  {
+    "nome": "Tesouro Selic 2029",
+    "categoria": "renda_fixa",
+    "risco": "baixo",
+    "rentabilidade_texto": "100% da Selic",
+    "rentabilidade_estimada_aa": "15.00%",
+    "aporte_minimo": 150.00,
+    "liquidez": "D+1",
+    "indicado_para": "Reserva de emergência e proteção contra inflação"
+  },
+  {
+    "nome": "CDB Banco Seguro",
+    "categoria": "renda_fixa",
+    "risco": "baixo",
+    "rentabilidade_texto": "102% do CDI",
+    "rentabilidade_estimada_aa": "15.20%",
+    "aporte_minimo": 100.00,
+    "liquidez": "Imediata (Diária)",
+    "indicado_para": "Quem busca segurança com rendimento superior à poupança"
+  },
+  {
+    "nome": "LCI Sustentável",
+    "categoria": "renda_fixa",
+    "risco": "baixo",
+    "rentabilidade_texto": "95% do CDI (Isento de IR)",
+    "rentabilidade_estimada_aa": "14.15%",
+    "aporte_minimo": 1000.00,
+    "liquidez": "No vencimento (90 dias carência)",
+    "indicado_para": "Quem pode deixar o dinheiro parado por 3 meses para ganhar mais (líquido)"
+  },
+  {
+    "nome": "Fundo Strategy Multimercado",
+    "categoria": "fundo",
+    "risco": "medio",
+    "rentabilidade_texto": "CDI + 2%",
+    "rentabilidade_estimada_aa": "16.85%",
+    "aporte_minimo": 500.00,
+    "liquidez": "D+5",
+    "indicado_para": "Perfil moderado que aceita pequenas oscilações para bater o CDI"
+  },
+  {
+    "nome": "Fundo Ações Ibovespa Ativo",
+    "categoria": "fundo",
+    "risco": "alto",
+    "rentabilidade_texto": "Superou o Ibovespa",
+    "rentabilidade_estimada_aa": "22.40% (Variável)",
+    "volatilidade": "Alta",
+    "aporte_minimo": 100.00,
+    "liquidez": "D+30",
+    "indicado_para": "Perfil arrojado com foco no longo prazo (+5 anos)"
+  }
+]
+
+### 📄 `transacoes.csv`
+> **Descrição:** O agente lê este arquivo para calcular o fluxo de caixa (Entradas - Saídas) e sugerir o valor do aporte mensal.
+
+data,descricao,categoria,valor,tipo
+2025-10-01,Salário,receita,5000.00,entrada
+2025-10-02,Aluguel,moradia,1200.00,saida
+2025-10-03,Supermercado,alimentacao,450.00,saida
+2025-10-05,Netflix,lazer,55.90,saida
+2025-10-07,Farmácia,saude,89.00,saida
+2025-10-10,Restaurante,alimentacao,120.00,saida
+2025-10-12,Uber,transporte,45.00,saida
+2025-10-15,Conta de Luz,moradia,180.00,saida
+2025-10-20,Academia,saude,99.00,saida
+2025-10-25,Combustível,transporte,250.00,saida
+
+
+### 📄 `historico_atendimento.csv`
+> **Descrição:** Log de interações passadas entre a cliente e o suporte. Uso: Contextualização (Few-Shot Learning). O agente sabe o que a cliente já aprendeu para não ser repetitivo.
+data,canal,tema,resumo,resolvido
+2025-09-15,chat,CDB,Cliente perguntou sobre rentabilidade e prazos,sim
+2025-09-22,telefone,Problema no app,Erro ao visualizar extrato foi corrigido,sim
+2025-10-01,chat,Tesouro Selic,Cliente pediu explicação sobre o funcionamento do Tesouro Direto,sim
+2025-10-12,chat,Metas financeiras,Cliente acompanhou o progresso da reserva de emergência,sim
+2025-10-25,email,Atualização cadastral,Cliente atualizou e-mail e telefone,sim
+
 ---
 
 ## Exemplos de Contexto Montado
