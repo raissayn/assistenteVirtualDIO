@@ -17,6 +17,9 @@ O agente atua como um tradutor simultâneo e analista de dados. Ele consulta bas
 
 Investidores iniciantes, pessoas que estão organizando suas finanças pessoais pela primeira vez e clientes que desejam tirar dúvidas rápidas sobre produtos de investimento sem a necessidade de agendar uma reunião formal com um assessor.
 
+### Ética e Privacidade
+O agente opera sob princípios éticos rigorosos: **ele não possui acesso a dados bancários sensíveis ou reais do usuário** e suas orientações têm caráter estritamente educativo e informativo, **não substituindo, em hipótese alguma, a consultoria técnica de um profissional financeiro certificado**.
+
 ---
 
 ## Persona e Tom de Voz
@@ -56,5 +59,3 @@ flowchart TD
     C -->|Gera Resposta Baseada no Contexto| E[Guardrails de Segurança]
     E -->|Verifica Alucinações/Viés| F[Resposta Final ao Cliente]
 ```
-### Ética e Privacidade
-O agente opera sob princípios éticos rigorosos: **ele não possui acesso a dados bancários sensíveis ou reais do usuário** e suas orientações têm caráter estritamente educativo e informativo, **não substituindo, em hipótese alguma, a consultoria técnica de um profissional financeiro certificado**.
