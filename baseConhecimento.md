@@ -12,9 +12,6 @@ Para garantir que o **Edu** forneça respostas precisas e não alucine, combinam
 | `glossario_financeiro_ptbr.json` | JSON | Curadoria Própria | Definições simples para termos complexos (ex: "Benchmarking", "Volatilidade"). |
 | `historico_duvidas_frequentes.csv` | CSV | Interno | Pares de Pergunta-Resposta para *Few-Shot Learning* no prompt. |
 
-> [!TIP]
-> **Dataset Robusto:** Utilizamos o dataset [financial_phrasebank](https://huggingface.co/datasets/financial_phrasebank) para treinar a compreensão de contextos financeiros positivos/negativos, e uma adaptação traduzida do dataset `gbharti/finance-alpaca` para estruturar a lógica de perguntas e respostas financeiras.
-
 ---
 
 ## Adaptações nos Dados
@@ -42,7 +39,7 @@ Os dados não são "treinados" no modelo, mas sim **injetados dinamicamente** no
 
 ---
 
-## Exemplo de Contexto Montado
+## Exemplos de Contexto Montado
 
 Abaixo está a estrutura exata do prompt que chega ao modelo (LLM) após a recuperação dos dados:
 

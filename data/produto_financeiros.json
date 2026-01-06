@@ -1,42 +1,54 @@
+
 [
   {
-    "nome": "Tesouro Selic",
+    "nome": "Tesouro Selic 2029",
     "categoria": "renda_fixa",
     "risco": "baixo",
-    "rentabilidade": "100% da Selic",
-    "aporte_minimo": 30.00,
-    "indicado_para": "Reserva de emergência e iniciantes"
+    "rentabilidade_texto": "100% da Selic",
+    "rentabilidade_anual_estimada": 15.00,
+    "aporte_minimo": 150.00,
+    "liquidez": "D+1",
+    "indicado_para": "Reserva de emergência e proteção contra inflação"
   },
   {
-    "nome": "CDB Liquidez Diária",
+    "nome": "CDB Banco Seguro",
     "categoria": "renda_fixa",
     "risco": "baixo",
-    "rentabilidade": "102% do CDI",
+    "rentabilidade_texto": "102% do CDI",
+    "rentabilidade_anual_estimada": 15.20,
     "aporte_minimo": 100.00,
-    "indicado_para": "Quem busca segurança com rendimento diário"
+    "liquidez": "Imediata (Diária)",
+    "indicado_para": "Quem busca segurança com rendimento superior à poupança"
   },
   {
-    "nome": "LCI/LCA",
+    "nome": "LCI Sustentável",
     "categoria": "renda_fixa",
     "risco": "baixo",
-    "rentabilidade": "95% do CDI",
+    "rentabilidade_texto": "95% do CDI (Isento de IR)",
+    "rentabilidade_anual_estimada": 14.15,
     "aporte_minimo": 1000.00,
-    "indicado_para": "Quem pode esperar 90 dias (isento de IR)"
+    "liquidez": "No vencimento (90 dias carência)",
+    "indicado_para": "Quem pode deixar o dinheiro parado por 3 meses para ganhar mais (líquido)"
   },
   {
-    "nome": "Fundo Multimercado",
+    "nome": "Fundo Strategy Multimercado",
     "categoria": "fundo",
     "risco": "medio",
-    "rentabilidade": "CDI + 2%",
+    "rentabilidade_texto": "CDI + 2%",
+    "rentabilidade_12m_real": 16.85,
     "aporte_minimo": 500.00,
-    "indicado_para": "Perfil moderado que busca diversificação"
+    "liquidez": "D+5",
+    "indicado_para": "Perfil moderado que aceita pequenas oscilações para bater o CDI"
   },
   {
-    "nome": "Fundo de Ações",
+    "nome": "Fundo Ações Ibovespa Ativo",
     "categoria": "fundo",
     "risco": "alto",
-    "rentabilidade": "Variável",
+    "rentabilidade_texto": "Superou o Ibovespa",
+    "rentabilidade_12m_real": 22.40,
+    "volatilidade_12m": "Alta (15%)",
     "aporte_minimo": 100.00,
-    "indicado_para": "Perfil arrojado com foco no longo prazo"
+    "liquidez": "D+30",
+    "indicado_para": "Perfil arrojado com foco no longo prazo (+5 anos)"
   }
 ]
