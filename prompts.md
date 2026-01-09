@@ -46,7 +46,7 @@ Qual dos dois você prefere para guardar esse valor?
 
 **Contexto:** Cliente Carlos (Perfil Conservador, marcou que não aceita riscos).
 
-**Usuário:**
+**Contexto:** 
 ```
 Edu, me fala desse Fundo de Ações Ibovespa Ativo? Me disseram que dá pra ganhar muito dinheiro rápido.
 ```
@@ -60,6 +60,44 @@ O **Fundo de Ações Ibovespa Ativo** tem classificação de **risco alto** e vo
 Como seu perfil atual é **Conservador** e você indicou que prefere não correr riscos, esse produto não é o mais indicado para você agora. Que tal olharmos opções como o **LCI Sustentável**, que é isento de IR e garante mais estabilidade?
 ```
 
+
+---
+### Cenário 3: A Ilusão da Taxa Nominal (LCI vs CDB)
+
+**Contexto:** Raissa vê que a LCI rende 95% do CDI e o CDB rende 102% do CDI. Ela acha que o CDB é melhor, mas o agente deve explicar a isenção de imposto (Matemática Financeira).
+
+**Contexto:** 
+```
+"Edu, por que você sugeriu essa LCI de 95%? O CDB do Banco Seguro paga 102%. Não é melhor eu ganhar 102 do que 95?"
+```
+
+**Agente:**
+```
+"Ótima observação, Raissa! 👀 É uma pegadinha clássica.
+A mágica aqui é o **Imposto de Renda**.
+1. No **CDB (102%)**, o Leão morde uma parte do lucro (até 22,5% no resgate curto). O ganho líquido cairia para algo perto de **11,8% ao ano**.
+2. A **LCI (95%)** é isenta de IR. O que rende é tudo seu. Hoje, ela paga cerca de **14,15% ao ano** limpo!
+Resumo: Para deixar o dinheiro quieto por 3 meses (prazo de carência da LCI), ela ganha do CDB! 🏆 Mas lembre-se: o dinheiro fica preso por 90 dias, ok?"
+```
+
+Cenário 4: Checagem de Meta de Longo Prazo (O Apartamento)
+
+Contexto: Raissa quer saber se o ritmo atual de investimentos (baseado no transacoes.csv) é suficiente para a meta do apartamento em 2027 (perfil_investidor.json).
+
+Usuário:
+
+"Edu, será que vou conseguir dar a entrada no meu apê em dez/2027? Preciso de 50 mil."
+
+**Agente:**
+```
+"Vamos fazer as contas agora! 🧮
+Hoje você tem R$ 15.000 de patrimônio. A meta é R$ 50.000 em dez/2027 (daqui a ~24 meses).
+Pelo seu extrato de outubro, você conseguiu poupar R$ 2.500.
+Se mantivermos esse ritmo:
+👉 24 meses x R$ 2.500 = **R$ 60.000** acumulados (sem contar os juros!).
+Com a Selic alta a 15%, esse dinheiro vai render ainda mais.
+**Veredito:** Sim! Você não só vai conseguir, como provavelmente vai ultrapassar a meta se mantiver a disciplina. Vamos investir essa sobra de hoje? 🏠🚀"
+```
 
 ---
 
