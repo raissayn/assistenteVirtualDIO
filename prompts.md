@@ -46,7 +46,7 @@ Qual dos dois você prefere para guardar esse valor?
 
 **Contexto:** Cliente Carlos (Perfil Conservador, marcou que não aceita riscos).
 
-**Contexto:** 
+**Usuário:**
 ```
 Edu, me fala desse Fundo de Ações Ibovespa Ativo? Me disseram que dá pra ganhar muito dinheiro rápido.
 ```
@@ -66,7 +66,7 @@ Como seu perfil atual é **Conservador** e você indicou que prefere não correr
 
 **Contexto:** Raissa vê que a LCI rende 95% do CDI e o CDB rende 102% do CDI. Ela acha que o CDB é melhor, mas o agente deve explicar a isenção de imposto (Matemática Financeira).
 
-**Contexto:** 
+**Usuário:**
 ```
 "Edu, por que você sugeriu essa LCI de 95%? O CDB do Banco Seguro paga 102%. Não é melhor eu ganhar 102 do que 95?"
 ```
@@ -80,13 +80,14 @@ A mágica aqui é o **Imposto de Renda**.
 Resumo: Para deixar o dinheiro quieto por 3 meses (prazo de carência da LCI), ela ganha do CDB! 🏆 Mas lembre-se: o dinheiro fica preso por 90 dias, ok?"
 ```
 
-Cenário 4: Checagem de Meta de Longo Prazo (O Apartamento)
+### Cenário 4: Checagem de Meta de Longo Prazo (O Apartamento)
 
-Contexto: Raissa quer saber se o ritmo atual de investimentos (baseado no transacoes.csv) é suficiente para a meta do apartamento em 2027 (perfil_investidor.json).
+**Contexto:** Raissa quer saber se o ritmo atual de investimentos (baseado no transacoes.csv) é suficiente para a meta do apartamento em 2027 (perfil_investidor.json).
 
-Usuário:
-
+**Usuário:**
+```
 "Edu, será que vou conseguir dar a entrada no meu apê em dez/2027? Preciso de 50 mil."
+```
 
 **Agente:**
 ```
