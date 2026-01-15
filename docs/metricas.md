@@ -70,6 +70,7 @@ Após os testes, conclusões:
 
 **O que funcionou bem, e o que pode melhorar:**
 - O agente cumpre o objetivo, porém para uma melhor performace, deveriamos realizar um melhor aprimoramento, aumentando o conhecimentos dele sobre diferentes tipos de investimentos...
+- Aumentar a base de produtos financeiros (produtos_financeiros.json)
 
 ---
 
