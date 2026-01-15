@@ -3,6 +3,5 @@ data,descricao,categoria,valor,tipo
 2025-10-03,Supermercado,alimentacao,450.00,saida
 2025-10-05,Aluguel,moradia,1200.00,saida
 2025-10-15,Luz,moradia,150.00,saida
-
 2025-10-20,Ifood,alimentacao,80.00,saida
 2025-10-25,Uber,transporte,200.00,saida
