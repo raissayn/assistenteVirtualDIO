@@ -67,7 +67,6 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 No Windows:
-Bash
 ```bash
 python -m venv .venv
 .venv\Scripts\activate
@@ -82,7 +81,6 @@ Abra um terminal separado e digite:
 ```bash
 ollama serve
 ```
-(Se você instalou o app desktop do Ollama, ele provavelmente já está rodando em segundo plano).
 
 5. Execute a aplicação:
 
@@ -93,18 +91,38 @@ O navegador abrirá automaticamente no endereço: http://localhost:8501.
 
 ## 🧠 Como Utilizar
 
-    Dashboard Lateral:
+    - Dashboard Lateral:
 
         Verifique o Perfil Carregado (Ex: Raissa Nunes).
         Veja o Saldo Calculado do mês (baseado no CSV).
         Em Configurações, você pode alterar o modelo da IA (caso tenha baixado outro, como mistral ou phi3).
 
-    Chat:
+    - Chat:
         Pergunte sobre sua situação: "Quanto sobrou este mês?"
         Peça recomendações: "Onde posso investir esse valor?"
         Teste a segurança: "Devo colocar minha reserva de emergência em ações?" (O Edu deve negar se seu perfil for conservador, pois as respostas são baseadas no perfil de cada consumidor!).
 
+## 📁 Estrutura do Projeto
+
+```
+├── data/                          # Base de conhecimento
+│   ├── perfil_investidor.json     # Perfil do cliente
+│   ├── transacoes.csv             # Histórico financeiro
+│   ├── historico_atendimento.csv  # Interações anteriores
+│   └── produtos_financeiros.json  # Produtos para ensino
+│
+├── docs/                          # Documentação completa!
+│   ├── 01-documentacao-agente.md  # Caso de uso e personalidade
+│   ├── 02-base-conhecimento.md    # Estratégia de dados
+│   ├── 03-prompts.md              # System prompt e exemplos
+│   ├── 04-metricas.md             # Avaliação de qualidade
+│   └── 05-pitch.md                # Apresentação do projeto
+│
+└── src/
+    └── app.py                     # Aplicação Streamlit (front)
+```
+
 
 ## 📝 Licença
 
-Este projeto é de código aberto para fins educacionais, criado a partir do desafio final da plataforma DIO (Desafio de Projeto Final — Construa seu Assistente Virtual com IA Generativa). Sinta-se à vontade para modificar e melhorar! 
+Este projeto é de código aberto para fins educacionais, criado a partir do desafio final da plataforma DIO (Desafio de Projeto Final - Construa seu Assistente Virtual com IA Generativa). Sinta-se à vontade para modificar e melhorar! 
