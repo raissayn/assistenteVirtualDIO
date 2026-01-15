@@ -124,7 +124,7 @@ for msg in st.session_state.messages:
         st.markdown(msg["content"])
 
 # Input do usuário
-if pergunta := st.chat_input("Sua dúvida sobre finanças..."):
+if pergunta := st.chat_input("Digite sua dúvida sobre finanças..."):
     st.session_state.messages.append({"role": "user", "content": pergunta})
     with st.chat_message("user"):
         st.markdown(pergunta)

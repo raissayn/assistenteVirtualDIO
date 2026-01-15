@@ -2,7 +2,7 @@
 
 O **Edu** é um assistente virtual focado em **finanças pessoais** que roda **100% localmente** na sua máquina. Ele utiliza a tecnologia **RAG (Retrieval-Augmented Generation)** para ler dados financeiros (extratos CSV e perfis JSON) e fornecer **consultoria personalizada e segura**, respeitando o perfil de risco do usuário.
 
-O projeto utiliza **Streamlit** para a interface web e **Ollama** para executar **Modelos de Linguagem (LLMs)** como **Llama 3** ou **Mistral** localmente, garantindo **privacidade total dos dados**.
+O projeto utiliza **Streamlit** para a interface web e **Ollama** para executar **Modelos de Linguagem (LLMs)** como o **Llama 3**, localmente, garantindo **privacidade total dos dados**.
 
 ---
 
@@ -15,10 +15,10 @@ O projeto utiliza **Streamlit** para a interface web e **Ollama** para executar 
   Lê arquivos `.csv` de transações, calcula entradas e saídas e identifica o saldo disponível em tempo real.
 
 - **Suitability (Trava de Segurança)**  
-  Se o perfil do usuário não aceita risco, a IA **nunca** recomendará investimentos de alto risco (Ações / Cripto), mesmo que solicitada.
+  Se o perfil do usuário não aceita risco, a IA **nunca** recomendará investimentos de alto risco (Ações / Cripto), mesmo que solicitada!
 
 - **Privacidade Total**  
-  Nenhum dado financeiro é enviado para a nuvem (OpenAI / Google). Todo o processamento ocorre localmente.
+  Nenhum dado financeiro é enviado para a nuvem (OpenAI / Google). Todo o processamento ocorre localmente!
 
 - **Configurável**  
   Permite trocar o modelo de IA (Llama3, Phi3, Mistral) diretamente pela interface.
@@ -94,8 +94,8 @@ O navegador abrirá automaticamente no endereço: http://localhost:8501.
     - Dashboard Lateral:
 
         Verifique o Perfil Carregado (Ex: Raissa Nunes).
-        Veja o Saldo Calculado do mês (baseado no CSV).
-        Em Configurações, você pode alterar o modelo da IA (caso tenha baixado outro, como mistral ou phi3).
+        Veja o Saldo Calculado do mês e o Resumo de gastos (baseados nos CSV) .
+        Em Configurações, você pode alterar o modelo da IA (caso tenha baixado outro).
 
     - Chat:
         Pergunte sobre sua situação: "Quanto sobrou este mês?"
