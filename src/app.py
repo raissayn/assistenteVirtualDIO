@@ -9,7 +9,11 @@ import ollama  # Biblioteca oficial do Ollama
 # ==============================================================================
 st.set_page_config(page_title="Edu | AI Financeiro Local", page_icon="🦙")
 
-# --- Helper para criar arquivos se não existirem (Para seu teste funcionar de primeira) ---
+
+OLLAMA_URL = "http://localhost:11434/api/chat"
+MODELO_PADRAO = "llama3"
+
+# --- Helper para criar dados mockados se não existirem ---
 def setup_dados_iniciais():
     if not os.path.exists("data"):
         os.makedirs("data")
@@ -45,7 +49,7 @@ try:
     perfil = json.load(open('data/perfil_investidor.json', encoding='utf-8'))
     produtos = json.load(open('data/produtos_financeiros.json', encoding='utf-8'))
     transacoes = pd.read_csv('data/transacoes.csv')
-    # historico = pd.read_csv('data/historico_atendimento.csv') # Opcional se tiver o arquivo
+    historico = pd.read_csv('data/historico_atendimento.csv') 
 except FileNotFoundError:
     st.error("Erro: Arquivos de dados não encontrados na pasta /data.")
     st.stop()
@@ -59,7 +63,6 @@ total_entradas = transacoes[transacoes['tipo'] == 'entrada']['valor'].sum()
 total_saidas = transacoes[transacoes['tipo'] == 'saida']['valor'].sum()
 saldo_livre = total_entradas - total_saidas
 
-# Criar string de produtos para o prompt
 lista_produtos = "\n".join([f"- {p['nome']} ({p['rentabilidade']} | Risco: {p['risco']})" for p in produtos])
 
 contexto_dados = f"""
