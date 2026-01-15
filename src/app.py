@@ -3,10 +3,9 @@ import pandas as pd
 import json
 import os
 import ollama  # Biblioteca oficial do Ollama
+import requests  
 
-# ==============================================================================
-# 0. CONFIGURAÇÃO DA PÁGINA
-# ==============================================================================
+# ==================================CONFIGURAÇÃO DA PÁGINA==================================
 st.set_page_config(page_title="Edu | AI Financeiro Local", page_icon="🦙")
 
 
@@ -40,11 +39,9 @@ def setup_dados_iniciais():
             f.write("data,tipo,valor\n2025-10-01,entrada,5000.00\n2025-10-05,saida,2400.00")
 
 setup_dados_iniciais()
-# ---------------------------------------------------------------------------------------
 
-# ==============================================================================
-# 1. CARREGA DADOS (Sua estrutura solicitada)
-# ==============================================================================
+
+# ==================================CARREGA DADOS (Sua estrutura solicitada)==================================
 try:
     perfil = json.load(open('data/perfil_investidor.json', encoding='utf-8'))
     produtos = json.load(open('data/produtos_financeiros.json', encoding='utf-8'))
@@ -54,11 +51,8 @@ except FileNotFoundError:
     st.error("Erro: Arquivos de dados não encontrados na pasta /data.")
     st.stop()
 
-# ==============================================================================
-# 2. MONTAR CONTEXTO (RAG Lógico)
-# ==============================================================================
+# ==================================MONTAR CONTEXTO (RAG Lógico)==================================
 
-# Calcular fluxo de caixa com Pandas
 total_entradas = transacoes[transacoes['tipo'] == 'entrada']['valor'].sum()
 total_saidas = transacoes[transacoes['tipo'] == 'saida']['valor'].sum()
 saldo_livre = total_entradas - total_saidas
@@ -81,9 +75,7 @@ SALDO DISPONÍVEL (SOBRAS): R$ {saldo_livre:.2f}
 {lista_produtos}
 """
 
-# ==============================================================================
-# 3. SYSTEM PROMPT
-# ==============================================================================
+# ==================================SYSTEM PROMPT==================================
 system_prompt = f"""
 Você é o Edu, um consultor financeiro pessoal.
 Responda sempre com base nos dados fornecidos abaixo. Seja direto e educado.
@@ -96,9 +88,7 @@ REGRAS:
 3. Responda em português do Brasil.
 """
 
-# ==============================================================================
-# 4. CHAMAR OLLAMA (Integração Local)
-# ==============================================================================
+# ==================================CHAMAR OLLAMA (Integração Local)==================================
 def chamar_ollama(mensagens_chat, modelo="llama3"):
     """
     Envia o histórico de conversa para o Ollama rodando localmente.
@@ -113,13 +103,11 @@ def chamar_ollama(mensagens_chat, modelo="llama3"):
     except Exception as e:
         return f"Erro ao conectar com Ollama. Verifique se o app está rodando (comando 'ollama serve'). Detalhe: {e}"
 
-# ==============================================================================
-# 5. INTERFACE (Streamlit)
-# ==============================================================================
+# ==================================INTERFACE (Streamlit)==================================
 
 # Sidebar para escolher modelo
 with st.sidebar:
-    st.header("🦙 Configurações LLM")
+    st.header("Configurações LLM")
     modelo_selecionado = st.selectbox("Modelo Ollama", ["llama3", "mistral", "phi3", "gemma:2b"])
     st.info(f"Rodando localmente via Ollama.\n\nCertifique-se de ter baixado o modelo: \n`ollama pull {modelo_selecionado}`")
     
