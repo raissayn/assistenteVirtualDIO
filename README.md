@@ -46,50 +46,47 @@ Antes de começar, certifique-se de ter instalado:
 
 ```bash
 ollama pull llama3:8b
-
+```
 ## 📦 Instalação e Execução
 
 Siga os passos abaixo para rodar o projeto.
 1. Clone o repositório
-Bash
+```bash
 
 git clone https://github.com/SEU-USUARIO/assistente-financeiro-edu.git
 cd assistente-financeiro-edu
-
+```
 2. Crie um Ambiente Virtual (Recomendado)
 
 Para evitar conflitos com o Python do sistema, crie um ambiente isolado.
 
 No Linux/Mac:
-Bash
+```bash
 
 python3 -m venv .venv
 source .venv/bin/activate
-
+```
 No Windows:
 Bash
-
+```bash
 python -m venv .venv
 .venv\Scripts\activate
-
+```
 3. Instale as dependências
-Bash
-
+```bash
 pip install streamlit pandas requests
-
+```
 4. Certifique-se que o Ollama está rodando
 
 Abra um terminal separado e digite:
-Bash
-
+```bash
 ollama serve
-
+```
 (Se você instalou o app desktop do Ollama, ele provavelmente já está rodando em segundo plano).
 5. Execute a aplicação
-Bash
-
+```bash
 streamlit run src/app.py
-
+```
 O navegador abrirá automaticamente no endereço: http://localhost:8501.
 
 ## 🧠 Como Utilizar
