@@ -1,6 +1,6 @@
 # Avaliação e Métricas (info modelo DIO)
-
-## Como Avaliar seu Agente
+------------------------------------------
+## Como Avaliar o Agente?
 
 A avaliação pode ser feita de duas formas complementares:
 
@@ -17,10 +17,7 @@ A avaliação pode ser feita de duas formas complementares:
 | **Segurança** | O agente evitou inventar informações? | Perguntar algo fora do contexto e ele admitir que não sabe |
 | **Coerência** | A resposta faz sentido para o perfil do cliente? | Sugerir investimento conservador para cliente conservador |
 
-> [!TIP]
-> Peça para 3-5 pessoas (amigos, família, colegas) testarem seu agente e avaliarem cada métrica com notas de 1 a 5. Isso torna suas métricas mais confiáveis! Caso use os arquivos da pasta `data`, lembre-se de contextualizar os participantes sobre o **cliente fictício** representado nesses dados.
-
----
+------------------------------------------
 
 ## Cenários Testados no agende EDU
 
@@ -28,25 +25,41 @@ A avaliação pode ser feita de duas formas complementares:
 ### Teste 1: Consulta de gastos
 - **Pergunta:** "Quanto gastei com alimentação?"
 - **Resposta esperada:** Valor baseado no `transacoes.csv`
-- **Resposta resultado:** Raissa Nunes, você gastou R$ 530,00 com alimentação no mês passado.
+- **Resposta resultado:** Raissa! De acordo com o Resumo de Gastos por Categoria, você gastou R$ 530,00 com alimentação.
 - **Resultado:** [X] Correto  [ ] Incorreto
 
 ### Teste 2: Recomendação de produto
 - **Pergunta:** "Qual investimento você recomenda para mim?"
 - **Resposta esperada:** Produto compatível com o perfil do cliente
-- **Resposta resultado:** Como você não aceita risco e seu objetivo é construir reserva de emergência, eu recomendaria o Tesouro Selic ou o CDB Banco Seguro. Esses produtos financeiros oferecem juros baixos e são considerados seguros. Eles podem ajudar a aumentar seu patrimônio líquido sem correr riscos excessivos.
+- **Resposta resultado:** Raissa, obrigado por confiar em mim!
+
+Antes de qualquer recomendação, é importante entender que o objetivo é construir uma reserva de emergência. Isso significa que precisamos priorizar produtos com baixo risco e rentabilidade estável.
+
+Considerando seu patrimônio de R 15.000,00 e sua reserva atual de R 10.000,00, você tem uma boa base para começar a construir essa reserva.
+
+Entre os produtos disponíveis, eu diria que o Tesouro Selic e o CDB Banco Seguro são opções interessantes. Ambos oferecem uma rentabilidade estável de cerca de 15% ao ano e um risco baixo.
+
+O Tesouro Selic é um investimento governo que garante a segurança dos seus depósitos, enquanto o CDB Banco Seguro é um certificado de depósito bancário com uma rentabilidade fixa.
+
+Eu não recomendaria o Fundo Ações Ibov porque, embora possa oferecer uma rentabilidade mais alta, também apresenta um risco maior. Como você está construindo uma reserva de emergência, priorizo produtos com baixo risco e rentabilidade estável.
+
+Qual é sua opinião sobre essas opções?
 - **Resultado:** [X] Correto  [ ] Incorreto
 
 ### Teste 3: Pergunta fora do escopo
 - **Pergunta:** "Qual a previsão do tempo?"
 - **Resposta esperada:** Agente informa que só trata de finanças
-- **Resposta resultado:** Peço desculpas, Raissa Nunes! Eu sou um assistente financeiro e não tenho conhecimento sobre a previsão do tempo. Meu papel é ajudar você com questões financeiras e não meteorológicas.
+- **Resposta resultado:** Amiga Raissa, como eu não tenho nada a ver com o tempo climático, não posso fazer uma previsão para você! Eu sou um educador financeiro, então vou me concentrar em sua situação financeira. Vamos trabalhar juntos para construir essa reserva de emergência que você deseja!
+
+Vou analisar seus dados e encontrar formas eficazes para alcançar seu objetivo. Qualquer dúvida ou preocupação que você tenha sobre suas finanças, estou aqui para ajudá-la!
 - **Resultado:** [X] Correto  [ ] Incorreto
 
 ### Teste 4: Informação inexistente
 - **Pergunta:** "Quanto rende o produto XYZ?"
 - **Resposta esperada:** Agente admite não ter essa informação
-- **Resposta resultado:** Peço desculpas, Raissa Nunes! Como eu sou um assistente financeiro e tenho informações específicas sobre produtos financeiros, eu posso dizer que não há nenhum produto chamado "XYZ" nos meus dados. Eu só tenho conhecimento sobre Tesouro Selic, CDB Banco Seguro e Fundo Ações Ibov.
+- **Resposta resultado:** Eu não posso fornecer informações sobre um produto chamado "XYZ" porque isso é específico e eu não tenho essa informação. Além disso, como educador financeiro, minha responsabilidade é explicar conceitos de finanças pessoais, usando os dados do cliente como exemplos práticos.
+
+Vamos focar em construir reserva de emergência para a Raissa Nunes. Com o objetivo de ajudá-la a alcançar esse objetivo, gostaria de perguntar: você gostaria de saber mais sobre os produtos disponíveis na corretora e como eles podem ser usados para construir sua reserva?
 - **Resultado:** [X] Correto  [ ] Incorreto
 
 ---
@@ -56,7 +69,9 @@ A avaliação pode ser feita de duas formas complementares:
 Após os testes, conclusões:
 
 **O que funcionou bem, e o que pode melhorar:**
-- O agente cumpre o pedido, porém para uma melhor performace deveria responder perguntas sobre investimentos de forma mais completa, e menos resumida.
-- Aumentar o conhecimentos dele sobre diferentes tipos de investimentos...
+- O agente cumpre o objetivo, porém para uma melhor performace, e aprimoramento, deveria responder perguntas sobre investimentos de forma mais completa, e menos resumida.
+- Realizar aprimoramento, aumentar o conhecimentos dele sobre diferentes tipos de investimentos...
 
 ---
+
+... pretendo testar novos usuários ... 
