@@ -1,50 +1,53 @@
-### 💰 Edu - Assistente Financeiro Pessoal (IA Local)
+# 💰 Edu – Assistente Financeiro Pessoal (IA Local)
 
-O Edu é um assistente virtual focado em finanças pessoais que roda 100% localmente na sua máquina. Ele utiliza a tecnologia RAG (Retrieval-Augmented Generation) para ler dados financeiros (extratos CSV e perfis JSON) e fornecer consultoria personalizada e segura, respeitando o perfil de risco do usuário.
+O **Edu** é um assistente virtual focado em **finanças pessoais** que roda **100% localmente** na sua máquina. Ele utiliza a tecnologia **RAG (Retrieval-Augmented Generation)** para ler dados financeiros (extratos CSV e perfis JSON) e fornecer **consultoria personalizada e segura**, respeitando o perfil de risco do usuário.
 
-Este projeto utiliza Streamlit para a interface web e Ollama para rodar Modelos de Linguagem (LLMs) como Llama 3 ou Mistral localmente, garantindo privacidade total dos dados.
+O projeto utiliza **Streamlit** para a interface web e **Ollama** para executar **Modelos de Linguagem (LLMs)** como **Llama 3** ou **Mistral** localmente, garantindo **privacidade total dos dados**.
 
-#### - 🚀 Funcionalidades
-    - Consultoria Personalizada: Analisa o perfil do investidor (Conservador/Moderado/Arrojado) antes de dar dicas.
+---
 
-    - Análise de Fluxo de Caixa: Lê arquivos .csv de transações, calcula entradas/saídas e identifica o saldo disponível em tempo real.
+## 🚀 Funcionalidades
 
-    - Suitability (Trava de Segurança): Se o perfil do usuário não aceita risco, a IA é programada para nuncar recomendar investimentos de alto risco (Ações/Cripto), mesmo que perguntada.
+- **Consultoria Personalizada**  
+  Analisa o perfil do investidor (Conservador / Moderado / Arrojado) antes de fornecer recomendações.
 
-    - Privacidade Total: Nenhum dado financeiro é enviado para nuvem (OpenAI/Google). Tudo é processado no seu computador.
+- **Análise de Fluxo de Caixa**  
+  Lê arquivos `.csv` de transações, calcula entradas e saídas e identifica o saldo disponível em tempo real.
 
-    - Configurável: Permite trocar o modelo de IA (Llama3, Phi3, Mistral) diretamente pela interface.
+- **Suitability (Trava de Segurança)**  
+  Se o perfil do usuário não aceita risco, a IA **nunca** recomendará investimentos de alto risco (Ações / Cripto), mesmo que solicitada.
 
-### - 🛠️ Tecnologias Utilizadas
+- **Privacidade Total**  
+  Nenhum dado financeiro é enviado para a nuvem (OpenAI / Google). Todo o processamento ocorre localmente.
 
-    Python 3.10+
+- **Configurável**  
+  Permite trocar o modelo de IA (Llama3, Phi3, Mistral) diretamente pela interface.
 
-    Streamlit (Interface Frontend)
+---
 
-    Ollama (Servidor de LLM Local)
+## 🛠️ Tecnologias Utilizadas
 
-    Pandas (Manipulação de Dados)
+- Python 3.10+
+- Streamlit (Interface Frontend)
+- Ollama (Servidor de LLM Local)
+- Pandas (Manipulação de Dados)
+- Requests (Comunicação com a API do Ollama)
 
-    Requests (Comunicação com API do Ollama)
+---
 
-### - ⚙️ Pré-requisitos
+## ⚙️ Pré-requisitos
 
-Antes de começar, você precisa ter instalado na sua máquina:
+Antes de começar, certifique-se de ter instalado:
 
-    Python (Versão 3.10 ou superior).
+- **Python** (versão 3.10 ou superior)
+- **Ollama**
+  - Baixe e instale em: https://ollama.com
+  - Após instalar, abra o terminal e baixe um modelo (exemplo: Llama 3):
 
-    Ollama:
+```bash
+ollama pull llama3:8b
 
-        Baixe e instale em ollama.com.
-
-        Após instalar, abra o terminal e baixe um modelo (ex: Llama 3):
-        Bash
-
-    ollama pull llama3:8b
-
-* Nota: O modelo usado por padrão no código é o llama3:8b. Se baixar outro, lembre-se de alterar na interface.
-
-### 📦 Instalação e Execução
+## 📦 Instalação e Execução
 
 Siga os passos abaixo para rodar o projeto.
 1. Clone o repositório
@@ -89,7 +92,7 @@ streamlit run src/app.py
 
 O navegador abrirá automaticamente no endereço: http://localhost:8501.
 
-### 🧠 Como Utilizar
+## 🧠 Como Utilizar
 
     Dashboard Lateral:
 
@@ -103,6 +106,6 @@ O navegador abrirá automaticamente no endereço: http://localhost:8501.
         Teste a segurança: "Devo colocar minha reserva de emergência em ações?" (O Edu deve negar se seu perfil for conservador, pois as respostas são baseadas no perfil de cada consumidor!).
 
 
-### 📝 Licença
+## 📝 Licença
 
 Este projeto é de código aberto para fins educacionais, criado a partir do desafio final da plataforma DIO (Desafio de Projeto Final — Construa seu Assistente Virtual com IA Generativa). Sinta-se à vontade para modificar e melhorar! 
